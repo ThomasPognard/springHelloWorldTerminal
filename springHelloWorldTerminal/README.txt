@@ -1,6 +1,6 @@
 Exemple en mode console du principe DIP avec spring 3.
-Les différentes étapes réalisées :
 
+Pour infos seulement, les différentes étapes réalisées :
 1/ Création du projet en local avec Eclipse.
 2/ intégration des bibliothèques spring (3.1.0 - par d'utilisation de maven :(
 3/ création du projet public sur github (springHelloWorldTerminal)
@@ -10,5 +10,7 @@ Les différentes étapes réalisées :
    git push -u origin master
 6/ fin des étapes préliminaires
 
-n/    modification, add+commit 
-n+1/  push to upstream 
+puis 
+
+n/    modification, add+commit (synchro dépot local)
+n+1/  push to upstream (commit vers github)
