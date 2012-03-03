@@ -1,0 +1,1 @@
+Exemple en mode console du principe DIP avec spring 3.
