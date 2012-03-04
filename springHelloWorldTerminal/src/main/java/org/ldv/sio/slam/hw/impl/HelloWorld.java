@@ -6,7 +6,6 @@ import org.ldv.sio.slam.hw.Hello;
  * Spring bean
  * 
  */
-
 public class HelloWorld implements Hello {
 	private String name;
 
