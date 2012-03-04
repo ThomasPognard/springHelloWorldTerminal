@@ -1,6 +1,6 @@
 /**
  * Interface de service pour l'opération Hello.
- * les classes d'implémentation devront donner corps (implémenter)
+ * les classes d'implémentation devront donner corps à (implémenter)
  * la méthode printHello déclarée ici. 
  */
 package org.ldv.sio.slam.hw;

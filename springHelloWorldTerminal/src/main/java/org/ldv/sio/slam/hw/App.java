@@ -17,7 +17,7 @@ public class App {
 
 	/**
 	 * constructeur par défaut pour les besoins d'instanciation Remarque :
-	 * considéré préssent par défaut si aucun autre constructeur n'est défini
+	 * considéré présent par défaut si aucun autre constructeur n'est défini
 	 */
 	public App() {
 	}
@@ -48,7 +48,7 @@ public class App {
 		// demande explicite d'un bean instance de cette classe (voir fichier XML)
 		App app = (App) context.getBean("main");
 		
-		// appel d'un de ses services publiques (ici la méthode sayHello)
+		// appel d'un de ses services publics (ici la méthode sayHello)
 		app.sayHello();
 	}
 }
