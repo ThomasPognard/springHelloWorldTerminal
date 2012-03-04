@@ -10,7 +10,7 @@ Pour infos seulement, les différentes étapes réalisées :
    git push -u origin master
 6/ fin des étapes préliminaires
 
-puis 
+puis (à revoir)
 
 n/    modification, add+commit (synchro dépot local)
 n+1/  push to upstream (commit vers github)
