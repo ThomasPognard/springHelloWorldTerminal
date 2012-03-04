@@ -1,4 +1,6 @@
-package org.ldv.sio.slam;
+package org.ldv.sio.slam.hw.impl;
+
+import org.ldv.sio.slam.hw.Hello;
 
 /**
  * Spring bean

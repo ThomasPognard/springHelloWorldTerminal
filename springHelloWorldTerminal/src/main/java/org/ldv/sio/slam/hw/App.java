@@ -4,7 +4,7 @@
  * @author kpu - fevrier 2012 pour SIO LDV - Melun
  */
 
-package org.ldv.sio.slam;
+package org.ldv.sio.slam.hw;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,7 +25,7 @@ public class App {
 	/**
 	 * Point d'injection utilisé par Spring (un setter prenant en argument un
 	 * objet implémentant l'interface Hello).
-	 * Est mentionné ici (qualifé) le nom du bean par défaut (voir fichier XML)
+	 * "coucou" est le nom (qualifé) du bean à injecter (voir fichier XML)
 	 */
 	@Autowired
 	@Qualifier("coucou")

@@ -1,5 +1,6 @@
-package org.ldv.sio.slam;
+package org.ldv.sio.slam.hw.impl;
 
+import org.ldv.sio.slam.hw.Hello;
 import org.springframework.stereotype.Service;
 
 /**

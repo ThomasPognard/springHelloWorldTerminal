@@ -10,17 +10,17 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:component-scan base-package="org.ldv.sio.slam" />
+	<context:component-scan base-package="org.ldv.sio.slam.hw" />
 
-	<bean class="org.ldv.sio.slam.HelloWorld" id="coucou2">
+	<bean class="org.ldv.sio.slam.hw.impl.HelloWorld" id="coucou2">
 		<property name="name" value="SLAM Student" />
 	</bean>
 
-	<bean class="org.ldv.sio.slam.BonjourMonde" id="coucou">
+	<bean class="org.ldv.sio.slam.hw.impl.BonjourMonde" id="coucou">
 		<property name="name" value="Étudiant SLAM" />
 	</bean>
 
-	<bean class="org.ldv.sio.slam.App" id="main" >
+	<bean class="org.ldv.sio.slam.hw.App" id="main" >
 	  <property name="hello" ref="coucou2"/>
 	</bean>
 
