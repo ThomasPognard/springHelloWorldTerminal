@@ -4,7 +4,7 @@
  * @author kpu - fevrier 2012 pour SIO LDV - Melun
  */
 
-package org.ldv.sio.slam.hw;
+package org.ldv.sio.slam.lights;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
-	private Hello obj;
+	private Lampe obj;
 
 	/**
 	 * constructeur par défaut pour les besoins d'instanciation Remarque :
@@ -29,15 +29,15 @@ public class App {
 	 */
 	@Autowired
 	@Qualifier("coucou")
-	public void setHello(Hello o) {
+	public void setLampe(Lampe o) {
 		obj = o;
 	}
 
 	/**
 	 * soutraite le service sayHello à un objet de type Hello (et sa méthode printHello)
 	 */
-	public void sayHello() {
-		obj.printHello();
+	public void allumer() {
+		obj.allumer();
 	}
 
 	public static void main(String[] args) {
@@ -49,6 +49,6 @@ public class App {
 		App app = (App) context.getBean("main");
 		
 		// appel d'un de ses services publics (ici la méthode sayHello)
-		app.sayHello();
+		app.allumer();
 	}
 }

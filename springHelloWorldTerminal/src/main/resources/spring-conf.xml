@@ -21,7 +21,7 @@
 	</bean>
 
 	<bean class="org.ldv.sio.slam.hw.App" id="main" >
-	  <property name="hello" ref="coucou2"/>
+	  <property name="hello" ref="coucou"/>
 	</bean>
 
 </beans>

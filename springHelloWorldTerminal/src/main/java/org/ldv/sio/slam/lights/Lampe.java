@@ -3,8 +3,11 @@
  * les classes d'implémentation devront donner corps à (implémenter)
  * la méthode printHello déclarée ici. 
  */
-package org.ldv.sio.slam.hw;
+package org.ldv.sio.slam.lights;
 
-public interface Hello {
-	public void printHello();
+public interface Lampe {
+	public void allumer();
+	public void eteindre();
+	public void intensifier();
+	public void diminuer();
 }
