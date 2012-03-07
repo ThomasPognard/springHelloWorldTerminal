@@ -13,42 +13,48 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
-	private Lampe obj;
+    private Eclairage eclairage;
 
-	/**
-	 * constructeur par défaut pour les besoins d'instanciation Remarque :
-	 * considéré présent par défaut si aucun autre constructeur n'est défini
-	 */
-	public App() {
-	}
+    /**
+     * constructeur par défaut pour les besoins d'instanciation Remarque :
+     * considéré présent par défaut si aucun autre constructeur n'est défini
+     */
+    public App() {
+    }
 
-	/**
-	 * Point d'injection utilisé par Spring (un setter prenant en argument un
-	 * objet implémentant l'interface Hello).
-	 * "coucou" est le nom (qualifé) du bean à injecter (voir fichier XML)
-	 */
-	@Autowired
-	@Qualifier("coucou")
-	public void setLampe(Lampe o) {
-		obj = o;
-	}
+    /**
+     * Point d'injection utilisé par Spring (un setter prenant en argument un
+     * objet implémentant l'interface Ampoule). "led" est le nom (qualifé) du
+     * bean à injecter (voir fichier XML)
+     */
+    @Autowired
+    @Qualifier("led")
+    public void setEclairage(Eclairage o) {
+        eclairage = o;
+    }
 
-	/**
-	 * soutraite le service sayHello à un objet de type Hello (et sa méthode printHello)
-	 */
-	public void allumer() {
-		obj.allumer();
-	}
+    /**
+     * Cycles d'éclairage et d'extinction d'une ampoule
+     */
+    public void cycles() {
+        // TODO allumer et éteindre 100 fois l'éclairage, on s'arrête au bout de
+        // 100 fois ou dès que l'éclairage tombe en panne
+    }
 
-	public static void main(String[] args) {
-		// chargement et initialisation du framework Spring
-		ApplicationContext context = new ClassPathXmlApplicationContext(
-		    "spring-conf.xml");
+    /**
+     * point d'entrée de l'application
+     * @param args non utilisés ici
+     */
+    public static void main(String[] args) {
+        // chargement et initialisation du framework Spring
+        ApplicationContext context = new ClassPathXmlApplicationContext(
+                "spring-conf.xml");
 
-		// demande explicite d'un bean instance de cette classe (voir fichier XML)
-		App app = (App) context.getBean("main");
-		
-		// appel d'un de ses services publics (ici la méthode sayHello)
-		app.allumer();
-	}
+        // demande explicite d'un bean instance de cette classe (voir fichier
+        // XML)
+        App app = (App) context.getBean("main");
+
+        // appel d'un de ses services publics (ici la méthode cycles)
+        app.cycles();
+    }
 }
