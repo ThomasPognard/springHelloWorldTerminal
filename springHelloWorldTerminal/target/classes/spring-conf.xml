@@ -16,12 +16,8 @@
 	<bean class="org.ldv.sio.slam.lights.impl.AmpouleIncandescente" id="incand" scope="prototype" />
     <bean class="org.ldv.sio.slam.lights.impl.AmpouleTube" id="tube" scope="prototype" />
     
-    <bean class="org.ldv.sio.slam.lights.impl.Luminaire" id="luminaire" scope="prototype">
-        <property name="ampoule1" ref="tube"/>
-        <property name="ampoule2" ref="tube"/>
-        <property name="ampoule3" ref="tube"/>
-        <property name="ampoule4" ref="tube"/>
-    </bean>
+    <bean class="org.ldv.sio.slam.lights.impl.Luminaire" id="luminaire" scope="prototype"/>
+ 
 
 	<bean class="org.ldv.sio.slam.lights.App" id="main" >
 	  <property name="eclairage" ref="luminaire"/>

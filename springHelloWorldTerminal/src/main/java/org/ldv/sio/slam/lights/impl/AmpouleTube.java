@@ -1,10 +1,12 @@
 package org.ldv.sio.slam.lights.impl;
 
+import java.util.Random;
+
 import org.ldv.sio.slam.lights.Eclairage;
 
 /**
- * Implémentation et simulation d'une "ampoule" de type tube néon dont la durée de vie est
- * est longue mais qui ne supporte pas les variations d'intensité.
+ * Implémentation et simulation d'une "ampoule" de type tube néon dont la durée
+ * de vie est est longue mais qui ne supporte pas les variations d'intensité.
  * 
  * @author fred
  * 
@@ -21,45 +23,53 @@ public class AmpouleTube implements Eclairage {
      * @return 0 l'ampoule fonctione, -1 l'ampoule est en panne
      */
     private int probaPanne() {
-        // TODO implémenter la probabilité que l'ampoule LED tombe en panne à
-        // l'allumage
+        Random alea = new Random();
+        if (alea.nextInt(100) < 10) {
+            return -1;
+        }
         return 0;
+
     }
 
     /**
      * Constructeur
      */
     public AmpouleTube() {
-        // TODO initialiser la lampe
+        etat = 0;
     }
 
     /**
      * Allume l'ampoule à pleine puissance
      */
     public void allumer() {
-        // TODO gérer la logique d'allumage
+        if (etat != -1 && probaPanne() != -1) {
+            etat = 10;
+        } else {
+            etat = -1;
+        }
     }
 
     /**
      * Eteint l'ampoule
      */
     public void eteindre() {
-        // TODO gérér la logique d'extinction
-
+        if (etat != -1) {
+            etat = 0;
+        }
     }
 
     /**
      * Augmente l'intensité lumineuse de l'ampoule
      */
     public void intensifier() {
-        // TODO gérer la logique d'augmentation de l'intensité
+        allumer();
     }
 
     /**
      * Diminuer l'intensité lumineuse de l'ampoule
      */
     public void diminuer() {
-        // TODO gérer la logique de diminution de l'intensité lumineuse
+        eteindre();
     }
 
     /**
@@ -68,18 +78,14 @@ public class AmpouleTube implements Eclairage {
      * @return l'état de la lampe 0..10 ou -1 si en panne
      */
     public int etat() {
-        // TODO retourner l'état effectif de l'ampoule
-        return 0;
+        return etat;
     }
 
     /**
      * @return l'état de l'objet sous la forme d'une chaîne de caractères
      */
     public String toString() {
-        // TODO retourner dans la chaîne le nom de la classe et l'état de
-        // l'ampoule
-        return "";
-
+        return this.getClass().getName() + " : " + etat;
     }
 
 }

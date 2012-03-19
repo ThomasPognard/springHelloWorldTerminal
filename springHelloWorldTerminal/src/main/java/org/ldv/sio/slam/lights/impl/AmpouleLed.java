@@ -24,8 +24,10 @@ public class AmpouleLed implements Eclairage {
      * @return 0 l'ampoule fonctione, -1 l'ampoule est en panne
      */
     private int probaPanne() {
-        // TODO implémenter la probabilité que l'ampoule LED tombe en panne à
-        // l'allumage
+        Random alea = new Random();
+        if (alea.nextInt(100) < 10) {
+            return -1;
+        }
         return 0;
     }
 
@@ -33,7 +35,7 @@ public class AmpouleLed implements Eclairage {
      * Constructeur
      */
     public AmpouleLed() {
-        // TODO initialiser la lampe
+        etat = 0;
     }
 
     /**
@@ -41,7 +43,11 @@ public class AmpouleLed implements Eclairage {
      */
     @Override
     public void allumer() {
-        // TODO gérer la logique d'allumage
+        if (etat != -1 && probaPanne() != -1) {
+            etat = 10;
+        } else {
+            etat = -1;
+        }
     }
 
     /**
@@ -49,8 +55,9 @@ public class AmpouleLed implements Eclairage {
      */
     @Override
     public void eteindre() {
-        // TODO gérér la logique d'extinction
-
+        if (etat != -1) {
+            etat = 0;
+        }
     }
 
     /**
@@ -58,7 +65,9 @@ public class AmpouleLed implements Eclairage {
      */
     @Override
     public void intensifier() {
-        // TODO gérer la logique d'augmentation de l'intensité
+        if (etat != -1 && etat < 10) {
+            etat++;
+        }
     }
 
     /**
@@ -66,7 +75,9 @@ public class AmpouleLed implements Eclairage {
      */
     @Override
     public void diminuer() {
-        // TODO gérer la logique de diminution de l'intensité lumineuse
+        if ( etat > 0) {
+            etat--;
+        }
     }
 
     /**
@@ -76,18 +87,14 @@ public class AmpouleLed implements Eclairage {
      */
     @Override
     public int etat() {
-        // TODO retourner l'état effectif de l'ampoule
-        return 0;
+        return etat;
     }
 
     /**
      * @return l'état de l'objet sous la forme d'une chaîne de caractères
      */
     public String toString() {
-        // TODO retourner dans la chaîne le nom de la classe et l'état de
-        // l'ampoule
-        return "";
-
+        return this.getClass().getName()+" : "+etat;
     }
 
 }
