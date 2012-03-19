@@ -36,7 +36,6 @@ public class AmpouleTube implements Eclairage {
     /**
      * Allume l'ampoule à pleine puissance
      */
-    @Override
     public void allumer() {
         // TODO gérer la logique d'allumage
     }
@@ -44,7 +43,6 @@ public class AmpouleTube implements Eclairage {
     /**
      * Eteint l'ampoule
      */
-    @Override
     public void eteindre() {
         // TODO gérér la logique d'extinction
 
@@ -53,7 +51,6 @@ public class AmpouleTube implements Eclairage {
     /**
      * Augmente l'intensité lumineuse de l'ampoule
      */
-    @Override
     public void intensifier() {
         // TODO gérer la logique d'augmentation de l'intensité
     }
@@ -61,7 +58,6 @@ public class AmpouleTube implements Eclairage {
     /**
      * Diminuer l'intensité lumineuse de l'ampoule
      */
-    @Override
     public void diminuer() {
         // TODO gérer la logique de diminution de l'intensité lumineuse
     }
@@ -71,7 +67,6 @@ public class AmpouleTube implements Eclairage {
      * 
      * @return l'état de la lampe 0..10 ou -1 si en panne
      */
-    @Override
     public int etat() {
         // TODO retourner l'état effectif de l'ampoule
         return 0;

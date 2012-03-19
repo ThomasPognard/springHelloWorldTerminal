@@ -29,21 +29,31 @@ public class App {
      */
     @Autowired
     @Qualifier("led")
-    public void setEclairage(Eclairage o) {
-        eclairage = o;
+    public void setEclairage(Eclairage ecl) {
+        eclairage = ecl;
     }
 
     /**
      * Cycles d'éclairage et d'extinction d'une ampoule
      */
     public void cycles() {
-        // TODO allumer et éteindre 100 fois l'éclairage, on s'arrête au bout de
-        // 100 fois ou dès que l'éclairage tombe en panne
+        int nbCycles = 0;
+        do{
+            eclairage.allumer();
+            while(eclairage.etat() > 0 ){
+                eclairage.diminuer();
+            }
+            System.out.println(eclairage.toString());
+            nbCycles ++;
+        }while (nbCycles < 1000 && eclairage.etat() != -1);
+        
     }
 
     /**
      * point d'entrée de l'application
-     * @param args non utilisés ici
+     * 
+     * @param args
+     *            non utilisés ici
      */
     public static void main(String[] args) {
         // chargement et initialisation du framework Spring

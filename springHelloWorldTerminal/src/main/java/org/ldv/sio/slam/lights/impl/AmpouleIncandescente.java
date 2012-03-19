@@ -1,11 +1,14 @@
 package org.ldv.sio.slam.lights.impl;
 
+import java.util.Random;
+
 import org.ldv.sio.slam.lights.Eclairage;
+
 /**
- * Implémentation d'une ampoule à incandescence 
+ * Implémentation d'une ampoule à incandescence
  * 
  * @author Frederic Varni
- *
+ * 
  */
 public class AmpouleIncandescente implements Eclairage {
 
@@ -16,11 +19,14 @@ public class AmpouleIncandescente implements Eclairage {
 
     /**
      * Calcule la probabilité qu'une ampoule tombe en panne
+     * 
      * @return 0 l'ampoule fonctione, -1 l'ampoule est en panne
      */
     private int probaPanne() {
-        // TODO implémenter la probabilité que l'ampoule à incandescence 
-        //      tombe en panne à l'allumage
+        Random alea = new Random();
+        if (alea.nextInt(100) < 10) {
+            return -1;
+        }
         return 0;
     }
 
@@ -28,7 +34,7 @@ public class AmpouleIncandescente implements Eclairage {
      * Constructeur
      */
     public AmpouleIncandescente() {
-        // TODO initialiser la lampe
+        etat = 0;
     }
 
     /**
@@ -36,7 +42,11 @@ public class AmpouleIncandescente implements Eclairage {
      */
     @Override
     public void allumer() {
-        // TODO gérer la logique d'allumage
+        if (etat != -1 && probaPanne() != -1) {
+            etat = 10;
+        } else {
+            etat = -1;
+        }
     }
 
     /**
@@ -44,7 +54,9 @@ public class AmpouleIncandescente implements Eclairage {
      */
     @Override
     public void eteindre() {
-        // TODO gérér la logique d'extinction
+        if (etat != -1) {
+            etat = 0;
+        }
 
     }
 
@@ -53,7 +65,9 @@ public class AmpouleIncandescente implements Eclairage {
      */
     @Override
     public void intensifier() {
-        // TODO gérer la logique d'augmentation de l'intensité
+        if (etat != -1 && etat < 10) {
+            etat++;
+        }
     }
 
     /**
@@ -61,26 +75,48 @@ public class AmpouleIncandescente implements Eclairage {
      */
     @Override
     public void diminuer() {
-        // TODO gérer la logique de diminution de l'intensité lumineuse
+        if ( etat > 0) {
+            etat--;
+        }
     }
 
     /**
      * Permet de connaître l'état de l'ampoule
+     * 
      * @return l'état de la lampe 0..10 ou -1 si en panne
      */
     @Override
     public int etat() {
-        // TODO retourner l'état effectif de l'ampoule
-        return 0;
+        return etat;
     }
 
     /**
      * @return l'état de l'objet sous la forme d'une chaîne de caractères
      */
     public String toString() {
-        // TODO retourner dans la chaîne le nom de la classe et l'état de l'ampoule
-        return "";
-        
+        return this.getClass().getName()+" : "+etat;
+
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
