@@ -2,6 +2,11 @@ package org.ldv.sio.slam.lights.impl;
 
 import org.ldv.sio.slam.lights.Eclairage;
 
+
+/**
+ * @author fred
+ * 
+ */
 public class Luminaire implements Eclairage {
 
     private AmpouleIncandescente ampoule1;
@@ -52,37 +57,32 @@ public class Luminaire implements Eclairage {
 
     }
 
+    /**
+     * Retourne l'état du luminaire dans l'intervalle [0..10] ou -1 si il est en
+     * panne. L'état résultant est la plus grande valeur des états des 4
+     * ampoules du luminaire
+     * 
+     * @return l'état du luminaire
+     */
     @Override
     public int etat() {
         int etat;
         etat = ampoule1.etat();
-        if(ampoule2.etat() > etat){
+        if (ampoule2.etat() > etat) {
             etat = ampoule2.etat();
         }
-        if(ampoule3.etat() > etat){
+        if (ampoule3.etat() > etat) {
             etat = ampoule3.etat();
         }
-        if(ampoule4.etat() > etat){
-            etat  = ampoule4.etat();
+        if (ampoule4.etat() > etat) {
+            etat = ampoule4.etat();
         }
         return etat;
     }
-    
-    public String toString(){
-        return "Classe : "+this.getClass().getName()+" etat :" + this.etat();
+
+    public String toString() {
+        return "Classe : " + this.getClass().getName() + " etat :"
+                + this.etat();
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

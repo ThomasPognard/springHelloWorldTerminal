@@ -24,7 +24,7 @@ public class AmpouleTube implements Eclairage {
      */
     private int probaPanne() {
         Random alea = new Random();
-        if (alea.nextInt(100) < 10) {
+        if (alea.nextInt(100) < 5) {
             return -1;
         }
         return 0;
