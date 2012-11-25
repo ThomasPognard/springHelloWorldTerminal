@@ -40,15 +40,4 @@ public class App {
 		obj.printHello();
 	}
 
-	public static void main(String[] args) {
-		// chargement et initialisation du framework Spring
-		ApplicationContext context = new ClassPathXmlApplicationContext(
-		    "spring-conf.xml");
-
-		// demande explicite d'un bean instance de cette classe (voir fichier XML)
-		App app = (App) context.getBean("main");
-		
-		// appel d'un de ses services publics (ici la méthode sayHello)
-		app.sayHello();
-	}
 }
