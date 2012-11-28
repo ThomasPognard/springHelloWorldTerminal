@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
-	private Hello obj;
+	private Hello objInjecté;
 
 	/**
 	 * constructeur par défaut pour les besoins d'instanciation Remarque :
@@ -30,14 +30,14 @@ public class App {
 	@Autowired
 	@Qualifier("coucou")
 	public void setHello(Hello o) {
-		obj = o;
+		objInjecté = o;
 	}
 
 	/**
-	 * soutraite le service sayHello à un objet de type Hello (et sa méthode printHello)
+	 * soustraite le service sayHello à un objet de type Hello (et sa méthode printHello)
 	 */
 	public void sayHello() {
-		obj.printHello();
+		objInjecté.printHello();
 	}
 
 }

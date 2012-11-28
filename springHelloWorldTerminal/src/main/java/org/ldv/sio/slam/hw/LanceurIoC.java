@@ -3,8 +3,7 @@ package org.ldv.sio.slam.hw;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class Lanceur {
-
+public class LanceurIoC {
 
 	public static void main(String[] args) {
 		// chargement et initialisation du framework Spring
