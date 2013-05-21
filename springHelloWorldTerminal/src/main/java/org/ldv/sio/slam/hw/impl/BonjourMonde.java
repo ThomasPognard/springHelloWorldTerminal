@@ -17,6 +17,7 @@ public class BonjourMonde implements Hello {
 		this.name = name;
 	}
 
+	@Override
 	public void printHello() {
 		System.out.println("Spring 3 : Bonjour  " + name + " !");
 	}

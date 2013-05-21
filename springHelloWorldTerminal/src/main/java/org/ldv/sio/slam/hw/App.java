@@ -30,7 +30,7 @@ public class App {
 	@Autowired
 	@Qualifier("coucou")
 	public void setHello(Hello o) {
-		objInjecté = o;
+		this.objInjecté = o;
 	}
 
 	/**
