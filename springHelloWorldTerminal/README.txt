@@ -1,6 +1,6 @@
 Exemple en mode console du principe DIP avec spring 3.
 
-Mélanie.
+Mélanie. Test
 
 Pour infos seulement, les différentes étapes réalisées :
 1/ Création du projet en local avec Eclipse.
