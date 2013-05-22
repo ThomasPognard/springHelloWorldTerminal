@@ -12,11 +12,15 @@ public class LanceurBasique {
 		App app = new App();
 		
 		// instanciation d'un composant
-		BonjourMonde hello = new  BonjourMonde();
-		hello.setName("SIO slam");
+		BonjourMonde hello;
+		hello = new  BonjourMonde();
+		hello.setName("SIO-12 slam");
+		
+		HelloWorld hello2 = new HelloWorld();
+		hello2.setName("Mélanie");
 		
 		// injection manuelle du composant dans l'application
-		app.setHello(hello);	
+		app.setHello(hello2);	
 		
 		// appel du service sayHello de App
 		app.sayHello();

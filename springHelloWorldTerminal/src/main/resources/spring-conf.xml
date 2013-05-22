@@ -11,15 +11,19 @@
 	<context:component-scan base-package="org.ldv.sio.slam.hw" />
 
 	<bean class="org.ldv.sio.slam.hw.impl.HelloWorld" id="coucou2">
-		<property name="name" value="SLAM Student" />
+		<property name="name" value="SLAM Mélanie and Thomas" />
 	</bean>
 
-	<bean class="org.ldv.sio.slam.hw.impl.BonjourMonde" id="coucou">
+	<bean class="org.ldv.sio.slam.hw.impl.BonjourMonde" id="coucou1">
 		<property name="name" value="Étudiant SLAM" />
+	</bean>
+	
+	<bean class="org.ldv.sio.slam.hw.impl.BonjourMondeEnJaponais" id="coucou3">
+		<property name="name" value="Mélanie" />
 	</bean>
 
 	<bean class="org.ldv.sio.slam.hw.App" id="main" >
-	  <property name="hello" ref="coucou2"/>
+	  <property name="hello" ref="coucou3"/>
 	</bean>
 
 </beans>
