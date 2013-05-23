@@ -8,12 +8,11 @@ package org.ldv.sio.slam.hw;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
 	private Hello objInjecté;
+	private Prenom prenomInjecté;
 
 	/**
 	 * constructeur par défaut pour les besoins d'instanciation Remarque :
@@ -32,6 +31,10 @@ public class App {
 	public void setHello(Hello o) {
 		this.objInjecté = o;
 	}
+	
+	public void setPrenom(Prenom o) {
+		this.prenomInjecté = o;
+	}
 
 	/**
 	 * soustraite le service sayHello à un objet de type Hello (et sa méthode printHello)
@@ -39,5 +42,10 @@ public class App {
 	public void sayHello() {
 		objInjecté.printHello();
 	}
+	
+	public void sayPrenom() {
+		prenomInjecté.printPrenom();
+	}
+
 
 }

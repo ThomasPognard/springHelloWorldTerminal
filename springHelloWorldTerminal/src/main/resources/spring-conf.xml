@@ -10,20 +10,28 @@
 
 	<context:component-scan base-package="org.ldv.sio.slam.hw" />
 
-	<bean class="org.ldv.sio.slam.hw.impl.HelloWorld" id="coucou2">
-		<property name="name" value="SLAM Mélanie and Thomas" />
-	</bean>
+	<bean class="org.ldv.sio.slam.hw.impl.BonjourMonde" id="bonjourfrançais"> </bean>
+	<bean class="org.ldv.sio.slam.hw.impl.HelloWorld" id="bonjouranglais"> </bean>
+	<bean class="org.ldv.sio.slam.hw.impl.BonjourMondeEnJaponais" id="bonjourjaponais"> </bean>
 
-	<bean class="org.ldv.sio.slam.hw.impl.BonjourMonde" id="coucou1">
-		<property name="name" value="Étudiant SLAM" />
+	<bean class="org.ldv.sio.slam.hw.impl.PrenomMonde" id="prenom"> </bean>
+
+	<bean class="org.ldv.sio.slam.hw.App" id="français" >
+	  <property name="hello" ref="bonjourfrançais"/>
 	</bean>
 	
-	<bean class="org.ldv.sio.slam.hw.impl.BonjourMondeEnJaponais" id="coucou3">
-		<property name="name" value="Mélanie" />
+	<bean class="org.ldv.sio.slam.hw.App" id="anglais" >
+	  <property name="hello" ref="bonjouranglais"/>
 	</bean>
-
-	<bean class="org.ldv.sio.slam.hw.App" id="main" >
-	  <property name="hello" ref="coucou3"/>
+	
+	<bean class="org.ldv.sio.slam.hw.App" id="japonais" >
+	  <property name="hello" ref="bonjourjaponais"/>
 	</bean>
+	
+	
+	<bean class="org.ldv.sio.slam.hw.App" id="mainprenom" >
+	  <property name="prenom" ref="prenom"/>
+	</bean>
+	
 
 </beans>

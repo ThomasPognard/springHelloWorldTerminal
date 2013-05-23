@@ -11,14 +11,8 @@ import org.springframework.stereotype.Service;
  */
 @Service("coucou")
 public class BonjourMonde implements Hello {
-	private String name;
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	@Override
+	
 	public void printHello() {
-		System.out.println("Spring 3 : Bonjour  " + name + " !");
+		System.out.println("Bonjour, ");
 	}
 }
