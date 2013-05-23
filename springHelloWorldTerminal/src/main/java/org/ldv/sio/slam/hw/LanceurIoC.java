@@ -12,7 +12,7 @@ public class LanceurIoC {
 		Scanner sc = new Scanner (System.in);
 		String main = "";
 		do {
-			System.out.println("Saisir : ");
+			System.out.println("Saisir la langue (français, anglais, japonais) : ");
 			main = sc.next();
 		}
 		while(!"français".equals(main) && !"anglais".equals(main) && !"japonais".equals(main));
